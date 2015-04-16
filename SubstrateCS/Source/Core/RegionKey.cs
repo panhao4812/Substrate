@@ -6,8 +6,20 @@ namespace Substrate.Core
 {
     public struct RegionKey : IEquatable<RegionKey>
     {
+        public static RegionKey InvalidRegion = new RegionKey(int.MinValue, int.MinValue);
+
         readonly int rx;
         readonly int rz;
+
+        public int X
+        {
+            get { return rx; }
+        }
+
+        public int Z
+        {
+            get { return rz; }
+        }
 
         public RegionKey (int _rx, int _rz)
         {
